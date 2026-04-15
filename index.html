@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李俊兴 | AI Agent 先锋者</title>
+    <!-- Tailwind CSS v3.0+ -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 自定义Tailwind配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0071e3',
+                        secondary: '#f5f5f7',
+                        dark: '#1d1d1f',
+                        light: '#f8f8f8'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                        mono: ['SF Mono', 'monospace']
+                    },
+                    transitionProperty: {
+                        'height': 'height',
+                        'spacing': 'margin, padding'
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            .card-hover {
+                @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+            }
+            .btn-primary {
+                @apply bg-primary text-white px-6 py-2 rounded-full font-medium transition-all duration-300 hover:bg-opacity-90 hover:shadow-md;
+            }
+            .section-padding {
+                @apply py-16 md:py-24;
+            }
+        }
+    </style>
+</head>
+<body class="font-inter bg-light text-dark">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 left-0 right-0 bg-white bg-opacity-90 backdrop-blur-sm z-50 shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-primary">李俊兴</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="font-medium hover:text-primary transition-colors">关于我</a>
+                <a href="#projects" class="font-medium hover:text-primary transition-colors">项目</a>
+                <a href="#contact" class="font-medium hover:text-primary transition-colors">联系我</a>
+            </div>
+            <button class="md:hidden text-dark" id="menu-toggle">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- 移动端菜单 -->
+        <div class="md:hidden hidden bg-white shadow-md absolute w-full" id="mobile-menu">
+            <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+                <a href="#about" class="font-medium hover:text-primary transition-colors">关于我</a>
+                <a href="#projects" class="font-medium hover:text-primary transition-colors">项目</a>
+                <a href="#contact" class="font-medium hover:text-primary transition-colors">联系我</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section class="pt-32 pb-20 md:pt-40 md:pb-32 bg-gradient-to-b from-white to-secondary">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 text-shadow">李俊兴</h1>
+            <p class="text-xl md:text-2xl text-gray-600 mb-8">AI Agent 先锋者</p>
+            <p class="text-lg md:text-xl text-gray-500 mb-12 max-w-2xl mx-auto">产品经理 · 项目经理 · 效率革命推动者</p>
+            <a href="#projects" class="btn-primary inline-block">查看我的项目</a>
+        </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section id="about" class="section-padding bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">关于我</h2>
+            <div class="max-w-3xl mx-auto">
+                <p class="text-lg mb-6">前数联天下AI产品经理，专注于AI Agent技术在各行业的应用与落地。</p>
+                <h3 class="text-xl font-semibold mb-4">专业证书</h3>
+                <ul class="list-disc pl-6 mb-8 space-y-2">
+                    <li>PMP（项目管理）</li>
+                    <li>ACP（敏捷项目管理）</li>
+                    <li>NPDP（产品经理国际资格认证）</li>
+                </ul>
+                <div class="bg-secondary rounded-lg p-6">
+                    <h3 class="text-xl font-semibold mb-4">专业技能</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <i class="fa fa-code text-primary text-2xl mb-2"></i>
+                            <p class="font-medium">AI Agent开发</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <i class="fa fa-line-chart text-primary text-2xl mb-2"></i>
+                            <p class="font-medium">产品管理</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <i class="fa fa-users text-primary text-2xl mb-2"></i>
+                            <p class="font-medium">项目管理</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <i class="fa fa-lightbulb-o text-primary text-2xl mb-2"></i>
+                            <p class="font-medium">创新思维</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <i class="fa fa-comments text-primary text-2xl mb-2"></i>
+                            <p class="font-medium">沟通协作</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <i class="fa fa-rocket text-primary text-2xl mb-2"></i>
+                            <p class="font-medium">敏捷开发</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目展示 -->
+    <section id="projects" class="section-padding bg-secondary">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">我的项目</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 项目1 -->
+                <a href="project1.html" class="block">
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm card-hover">
+                        <img src="https://picsum.photos/id/64/1920/1080" alt="智慧美业Multi-Agent美肤个性化方案" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">智慧美业Multi-Agent美肤个性化方案</h3>
+                            <p class="text-gray-600 mb-4">利用AI Agent技术，为用户提供个性化的美肤方案，结合多维度数据分析，实现精准护肤建议。</p>
+                            <div class="flex items-center text-primary">
+                                <span class="font-medium">查看详情</span>
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <!-- 项目2 -->
+                <a href="project2.html" class="block">
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm card-hover">
+                        <img src="https://picsum.photos/id/152/1920/1080" alt="智慧农业Multi-Agent土壤健康报告生成" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">智慧农业Multi-Agent土壤健康报告生成</h3>
+                            <p class="text-gray-600 mb-4">通过多Agent协作，分析土壤数据，生成详细的土壤健康报告，为农业生产提供科学指导。</p>
+                            <div class="flex items-center text-primary">
+                                <span class="font-medium">查看详情</span>
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <!-- 项目3 -->
+                <a href="project3.html" class="block">
+                    <div class="bg-white rounded-xl overflow-hidden shadow-sm card-hover">
+                        <img src="https://picsum.photos/id/20/1920/1080" alt="智慧幼教平台WEB AI Copilot" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">智慧幼教平台WEB AI Copilot</h3>
+                            <p class="text-gray-600 mb-4">为幼教平台开发的AI Copilot，辅助教师进行课程设计、教案生成和学生评估，提升教学效率。</p>
+                            <div class="flex items-center text-primary">
+                                <span class="font-medium">查看详情</span>
+                                <i class="fa fa-arrow-right ml-2"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系信息 -->
+    <section id="contact" class="section-padding bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">联系我</h2>
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-secondary rounded-xl p-8">
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white">
+                                <i class="fa fa-weixin text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="font-semibold">微信</h3>
+                                <p class="text-gray-600">lijxde</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white">
+                                <i class="fa fa-phone text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="font-semibold">手机</h3>
+                                <p class="text-gray-600">13825242808</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white">
+                                <i class="fa fa-envelope text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="font-semibold">邮箱</h3>
+                                <p class="text-gray-600">63624040@qq.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="font-semibold mb-4">社交媒体</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                <i class="fa fa-github"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+                                <i class="fa fa-weibo"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-4">© 2026 李俊兴. 保留所有权利.</p>
+            <p class="text-gray-400 text-sm">AI Agent 先锋者 | 产品经理 | 项目经理</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 移动端菜单切换
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    // 关闭移动端菜单
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // 滚动时导航栏样式变化
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+                nav.classList.remove('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.add('shadow-sm');
+            }
+        });
+    </script>
+</body>
+</html>

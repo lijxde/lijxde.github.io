@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧幼教平台WEB AI Copilot | 李俊兴</title>
+    <!-- Tailwind CSS v3.0+ -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 自定义Tailwind配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0071e3',
+                        secondary: '#f5f5f7',
+                        dark: '#1d1d1f',
+                        light: '#f8f8f8'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                        mono: ['SF Mono', 'monospace']
+                    },
+                    transitionProperty: {
+                        'height': 'height',
+                        'spacing': 'margin, padding'
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            .card-hover {
+                @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+            }
+            .btn-primary {
+                @apply bg-primary text-white px-6 py-2 rounded-full font-medium transition-all duration-300 hover:bg-opacity-90 hover:shadow-md;
+            }
+            .section-padding {
+                @apply py-16 md:py-24;
+            }
+        }
+    </style>
+</head>
+<body class="font-inter bg-light text-dark">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 left-0 right-0 bg-white bg-opacity-90 backdrop-blur-sm z-50 shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold text-primary">李俊兴</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html#about" class="font-medium hover:text-primary transition-colors">关于我</a>
+                <a href="index.html#projects" class="font-medium hover:text-primary transition-colors">项目</a>
+                <a href="index.html#contact" class="font-medium hover:text-primary transition-colors">联系我</a>
+            </div>
+            <button class="md:hidden text-dark" id="menu-toggle">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- 移动端菜单 -->
+        <div class="md:hidden hidden bg-white shadow-md absolute w-full" id="mobile-menu">
+            <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+                <a href="index.html#about" class="font-medium hover:text-primary transition-colors">关于我</a>
+                <a href="index.html#projects" class="font-medium hover:text-primary transition-colors">项目</a>
+                <a href="index.html#contact" class="font-medium hover:text-primary transition-colors">联系我</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 项目详情 -->
+    <section class="pt-32 pb-20 md:pt-40 md:pb-32 bg-gradient-to-b from-white to-secondary">
+        <div class="container mx-auto px-4">
+            <div class="mb-8">
+                <a href="index.html#projects" class="inline-flex items-center text-primary mb-4">
+                    <i class="fa fa-arrow-left mr-2"></i>
+                    <span>返回项目列表</span>
+                </a>
+                <h1 class="text-3xl md:text-5xl font-bold mb-4">智慧幼教平台 WEB AI Copilot</h1>
+                <p class="text-lg text-gray-600">B2G / 教育类 AI 应用</p>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-sm p-8 mb-12">
+                <img src="https://picsum.photos/id/20/1920/1080" alt="智慧幼教平台WEB AI Copilot" class="w-full h-64 md:h-96 object-cover rounded-lg mb-8">
+                
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-2xl font-semibold mb-4 flex items-center">
+                            <i class="fa fa-briefcase text-primary mr-3"></i>
+                            业务场景
+                        </h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            针对幼教 SaaS 管理端，降低系统使用门槛，利用 AI 辅助园长与幼师完成繁杂的图文管理与内容创作工作。
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h2 class="text-2xl font-semibold mb-4 flex items-center">
+                            <i class="fa fa-cogs text-primary mr-3"></i>
+                            核心动作
+                        </h2>
+                        <p class="text-gray-700 leading-relaxed mb-4">
+                            从 0 到 1 规划 Web Copilot 基础架构，完成 RAG 配置、意图识别与功能导航机制；深入业务痛点，设计落地 "活动方案对话式生成"、"标准化教案一键生成与多轮调优" 及 "多风格宣传海报 AI 生图" 等核心技能矩阵。
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h2 class="text-2xl font-semibold mb-4 flex items-center">
+                            <i class="fa fa-line-chart text-primary mr-3"></i>
+                            项目成果
+                        </h2>
+                        <p class="text-gray-700 leading-relaxed">
+                            大幅缩短幼教从业者的内容创作周期，提升了 SaaS 平台的用户活跃度与产品附加值。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 相关项目 -->
+    <section class="section-padding bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-12 text-center">相关项目</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 相关项目1 -->
+                <div class="bg-secondary rounded-xl overflow-hidden shadow-sm card-hover">
+                    <img src="https://picsum.photos/id/64/1920/1080" alt="智慧美业Multi-Agent美肤个性化方案" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">智慧美业Multi-Agent美肤个性化方案</h3>
+                        <p class="text-gray-600 mb-4">利用AI Agent技术，为用户提供个性化的美肤方案，结合多维度数据分析，实现精准护肤建议。</p>
+                        <a href="project1.html" class="flex items-center text-primary">
+                            <span class="font-medium">查看详情</span>
+                            <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- 相关项目2 -->
+                <div class="bg-secondary rounded-xl overflow-hidden shadow-sm card-hover">
+                    <img src="https://picsum.photos/id/152/1920/1080" alt="智慧农业Multi-Agent土壤健康报告生成" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">智慧农业Multi-Agent土壤健康报告生成</h3>
+                        <p class="text-gray-600 mb-4">通过多Agent协作，分析土壤数据，生成详细的土壤健康报告，为农业生产提供科学指导。</p>
+                        <a href="project2.html" class="flex items-center text-primary">
+                            <span class="font-medium">查看详情</span>
+                            <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-4">© 2026 李俊兴. 保留所有权利.</p>
+            <p class="text-gray-400 text-sm">AI Agent 先锋者 | 产品经理 | 项目经理</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 移动端菜单切换
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 滚动时导航栏样式变化
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+                nav.classList.remove('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.add('shadow-sm');
+            }
+        });
+    </script>
+</body>
+</html>
